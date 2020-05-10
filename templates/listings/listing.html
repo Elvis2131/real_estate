@@ -1,5 +1,256 @@
 {%extends 'base.html'%}
 
+{% load static%}
+{% load humanize %}
+
 {% block content%}
-<h1>Single listing Page</h1>
+<!-- Property Details Hero Section Begin -->
+    <section class="pd-hero-section set-bg" data-setbg="{{property.main_image.url}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="pd-hero-text">
+                    <p class="room-location"><i class="icon_pin"></i> {{property.address}}</p>
+                    <h2>{{property.title}}</h2>
+                    <div class="room-price">
+                        <span>Start Form:</span>
+                        <p>${{property.price | intcomma}}</p>
+                    </div>
+                    <ul class="room-features">
+                        <li>
+                            <i class="fa fa-arrows"></i>
+                            <p>{{property.home_area}} sqft</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-bed"></i>
+                            <p>{{property.bed}} Bed Room</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-bath"></i>
+                            <p>{{property.bathroom}} Baths Bed</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-car"></i>
+                            <p>{{property.garage }} Garage</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+<!-- Property Details Hero Section Begin -->
+
+<!-- Property Details Section Begin -->
+    <section class="property-details-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="pd-details-text">
+                    <div class="pd-details-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-send"></i></a>
+                        <a href="#"><i class="fa fa-star"></i></a>
+                        <a href="#"><i class="fa fa-print"></i></a>
+                        <a href="#"><i class="fa fa-cloud-download"></i></a>
+                    </div>
+                    <div class="property-more-pic">
+                        <div class="product-pic-zoom">
+                            <img class="product-big-img" src="{{property.main_image.url}}" alt="main_image" height="399px" width="840px">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumbs-track ps-slider owl-carousel">
+                                <div class="pt" data-imgbigurl="img/properties/property-details-b2.jpg"><img
+                                        src="img/properties/thumb-1.jpg" alt=""></div>
+                                <div class="pt active" data-imgbigurl="img/properties/property-details-b1.jpg"><img
+                                        src="img/properties/thumb-2.jpg" alt=""></div>
+                                <div class="pt" data-imgbigurl="img/properties/property-details-b3.jpg"><img
+                                        src="img/properties/thumb-3.jpg" alt=""></div>
+                                <div class="pt" data-imgbigurl="img/properties/property-details-b4.jpg"><img
+                                        src="img/properties/thumb-4.jpg" alt=""></div>
+                                <div class="pt" data-imgbigurl="img/properties/property-details-b5.jpg"><img
+                                        src="img/properties/thumb-5.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-desc">
+                        <h4>Description</h4>
+                        <p>{{ property.description }}</p>
+                    </div>
+                    <div class="pd-details-tab">
+                        <div class="tab-item">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">Overview</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#tab-2" role="tab">Description</a>
+                                </li>
+                                <!-- <li>
+                                    <a data-toggle="tab" href="#tab-3" role="tab">Amenities</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-content">
+                                <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                    <div class="property-more-table">
+                                        <table class="left-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pt-name">Price</td>
+                                                    <td class="p-value">$ {{property.price | intcomma}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Property Type</td>
+                                                    <td class="p-value">{{property.property_type}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">List Date</td>
+                                                    <td class="p-value">{{property.list_date | date:"d M Y T"}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Bathrooms</td>
+                                                    <td class="p-value">{{property.bathroom}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Rooms</td>
+                                                    <td class="p-value">{{property.room}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Parking lots</td>
+                                                    <td class="p-value">{{property.parking_lot}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Lot area</td>
+                                                    <td class="p-value">{{property.lot_area}} spft</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="right-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pt-name">Agent</td>
+                                                    <td class="p-value">{{property.agent.name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Reference</td>
+                                                    <td class="p-value">{{property.reference}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Contract type</td>
+                                                    <td class="p-value">{{property.contract}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Beds</td>
+                                                    <td class="p-value">{{property.bed}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Garages</td>
+                                                    <td class="p-value">{{property.garage}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Home area</td>
+                                                    <td class="p-value">{{property.home_area}} sqft</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-name">Garage Size</td>
+                                                    <td class="p-value">{{property.garage_area}} sqft</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                                    <div class="pd-table-desc">
+                                        <p>{{property.description}}</p>
+                                    </div>
+                                </div>
+                                <!-- <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                                    <div class="pd-table-amenities">
+                                        <p>Learn how to improve your playing quality and even overall understanding
+                                            of online gaming and how you perform while playing online. Gaming online
+                                            is a huge business nowadays and that means that there are millions of
+                                            people worldwide at online game sites all the time. Many are people just
+                                            like you and me that like to play online and have fun doing it. Some of
+                                            these people enjoy it so much, that they often do not even care about
+                                            improving their skill and raising their chances of winning.</p>
+                                        <p>Learn how to improve your playing quality and even overall understanding
+                                            of online gaming and how you perform while playing online. Gaming online
+                                            is a huge business nowadays and that means that there are millions of
+                                            people worldwide at online game sites all the time. Many are people just
+                                            like you and me that like to play online and have fun doing it. Some of
+                                            these people enjoy it so much, that they often do not even care about
+                                            improving their skill and raising their chances of winning.</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="property-map">
+                        <h4>Map</h4>
+                        <div class="map-inside">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.5524090066037!2d-71.10245469994108!3d42.47980730490846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3748250c43a43%3A0xe1b9879a5e9b6657!2sWinter%20Street%20Public%20Parking%20Lot!5e0!3m2!1sen!2sbd!4v1577299251173!5m2!1sen!2sbd"
+                                height="320" style="border:0;" allowfullscreen=""></iframe>
+                            <div class="icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="property-contactus">
+                        <h4>Contact Us</h4>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="agent-desc">
+                                    <img src="{{property.agent.profile_img.url}}" alt="profile image" height="200px" width="300px">
+                                    <div class="agent-title">
+                                        <h5>{{property.agent.name}}</h5>
+                                        <span>{{property.agent.title}}</span>
+                                    </div>
+                                    <div class="agent-social">
+                                        <a href="{{property.agent.facebook}}"><i class="fa fa-facebook"></i></a>
+                                        <a href="{{property.agent.twitter}}"><i class="fa fa-twitter"></i></a>
+                                        <a href="{{property.agent.linkedIn}}"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                    <p> {{property.agent.short_note}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 offset-lg-1">
+                                <form action="#" class="agent-contact-form">
+                                    <input type="text" placeholder="Name*">
+                                    <input type="text" placeholder="Email">
+                                    <textarea placeholder="Messages"></textarea>
+                                    <button type="submit" class="site-btn">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="property-sidebar">
+                    <div class="best-agents">
+                        <h4>Best Agents</h4>
+                        {% for agent in agents %}
+                        <a href="#" class="ba-item">
+                            <div class="ba-pic">
+                                <img src="{{agent.profile_img.url}}" alt="" height="80px" width="100px">
+                            </div>
+                            <div class="ba-text">
+                                <h5>{{agent.name}}</h5>
+                                <span>{{agent.title}}</span>
+                                <p class="property-items">{{agent.listing_set.count}} property </p>
+                            </div>
+                        </a>
+                       {%endfor%}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+<!-- Property Details Section End -->
 {%endblock%}
