@@ -32,11 +32,12 @@ class Listing(models.Model):
     main_image = models.ImageField(upload_to='photos/%Y/%m/%d/')
     feature_image_1 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
     feature_image_2 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
-    # feature_image_3 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
-    # feature_image_4 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
-    # feature_image_5 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
-    # feature_image_6 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
 
+    """
+    Other Property info
+    """ 
+    is_featured = models.BooleanField(default=False)
+    is_top_property = models.BooleanField(default=False)
     is_published = models.BooleanField(default=True)
 
     def __str__(self):
