@@ -30,12 +30,12 @@ class Listing(models.Model):
     
     # images model
     main_image = models.ImageField(upload_to='photos/%Y/%m/%d/')
-    feature_image_1 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
-    feature_image_2 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
-    feature_image_3 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
-    feature_image_4 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
-    feature_image_5 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
-    feature_image_6 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True)
+    feature_image_1 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
+    feature_image_2 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
+    # feature_image_3 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
+    # feature_image_4 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
+    # feature_image_5 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
+    # feature_image_6 = models.ImageField(upload_to='photos/property/%Y/%m/%d/', blank=True, default="photos/default/default.jpg")
 
     is_published = models.BooleanField(default=True)
 
