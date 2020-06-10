@@ -10,9 +10,16 @@ class Listing(models.Model):
         ('SALE','SALE')
     )
 
+    CITY = (
+        ('Accra','Accra'),
+        ('Kumasi','Kumasi'),
+        ('Takoradi','Takoradi')
+    )
+
     agent = models.ForeignKey(Agent, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
+    city = models.CharField(max_length=50, choices=CITY, blank=False)
     description = models.TextField(max_length=500)
     property_type = models.CharField(max_length=500)
     reference = models.CharField(max_length=50)

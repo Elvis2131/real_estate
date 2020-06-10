@@ -140,24 +140,36 @@
                             House For Sell
                         </div>
                     </div>
-                    <form action="#" class="filter-form">
+                    <form action="www.google.com" class="filter-form">
                         <div class="first-row">
                             <select>
-                                <option value="">Villa & Pool</option>
+                                <option value="" disabled selected>Select the contract</option>
+                            {% for key,value in contract.items %}
+                                <option value="{{ key }}">{{value}}</option>
+                            {% endfor %}
                             </select>
                             <select>
-                                <option value="">Title</option>
+                                <option value="" disabled selected>Select the city</option>
+                            {% for key,value in city.items %}
+                                <option value="{{key}}">{{value}}</option>
+                            {% endfor%}    
                             </select>
                             <select>
                                 <option value="">Ani City</option>
                             </select>
                             <select>
-                                <option value="">Any Bithrooms</option>
+                                <option value="" disabled selected>Bathrooms Number</option>
+                            {% for key,value in bath.items %}
+                                <option value="{{key}}">{{value}}</option>
+                            {% endfor %}
                             </select>
                         </div>
                         <div class="second-row">
                             <select>
-                                <option value="">Any Bedrooms</option>
+                                <option value="" disabled selected>Bedroom Number</option>
+                            {% for key,value in bed.items %}
+                                <option value="{{key}}">{{value}}</option>
+                            {%endfor%}
                             </select>
                             <div class="price-range-wrap">
                                 <div class="price-text">
@@ -173,7 +185,7 @@
                                 </div>
                                 <div id="roomsize-range" class="slider"></div>
                             </div>
-                            <button type="button" class="search-btn">Search</button>
+                            <button type="button"  type="submit" class="search-btn">Search</button>
                         </div>
                     </form>
                 </div>

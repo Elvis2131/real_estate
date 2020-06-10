@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Listing
 from agents.models import Agent
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
@@ -14,9 +15,9 @@ def index(request):
     if request.method == "GET":
         context ={
             "prop": paged_property,
-            "agents": agents
+            "agents": agents,
         }
-
+    
     return render(request, 'listings/listings.html', context)
 
 def listing(request, listing_id):
@@ -27,6 +28,7 @@ def listing(request, listing_id):
             "property":property,
             "agents":agents
         }
+
     return render(request, 'listings/listing.html', context)
 
 def search(request):

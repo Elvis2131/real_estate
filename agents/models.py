@@ -6,9 +6,9 @@ class Agent(models.Model):
     title = models.CharField(max_length=50)
     short_note = models.TextField(max_length=500)
     profile_img = models.ImageField(upload_to='photos/agents/%Y/%m/%d/', blank=True)
-    facebook = models.URLField(max_length=200, blank=True)
-    twitter = models.URLField(max_length=200, blank=True)
-    linkedIn = models.URLField(max_length=200, blank=True)
+    facebook = models.URLField(max_length=200, blank=True, default="#")
+    twitter = models.URLField(max_length=200, blank=True, default="#")
+    linkedIn = models.URLField(max_length=200, blank=True, default="#")
     email = models.EmailField(max_length=254)
     is_mvp = models.BooleanField(default=False)
 
