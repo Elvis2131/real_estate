@@ -16,7 +16,7 @@ dataclasses==0.6
 decorator==4.0.10
 defusedxml==0.6.0
 diff-match-patch==20181111
-Django==2.2.11
+Django==2.2.13
 django-crispy-forms==1.8.1
 django-import-export==2.0.2
 django-registration==3.1
