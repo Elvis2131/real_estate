@@ -134,9 +134,3 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-#Email settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT =  587
-EMAIL_HOST_USER = os.getenv('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
-EMAIL_USE_TLS = True
