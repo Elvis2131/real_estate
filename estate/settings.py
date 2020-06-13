@@ -77,17 +77,6 @@ WSGI_APPLICATION = 'estate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'realestate',
-        'USER': 'postgres',
-        'PASSWORD': 'Secondary123.',
-        'HOST': 'localhost'
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
