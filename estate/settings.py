@@ -84,18 +84,18 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'realestate',
-        # 'NAME': 'dar89v1i38pva',
+        # 'NAME': 'realestate',
+        'NAME': 'dar89v1i38pva',
 
-        # 'USER': 'bpmzatuaahfeyj',
-        'USER': 'postgres',
-        # 'PORT': 5432,
+        'USER': 'bpmzatuaahfeyj',
+        # 'USER': 'postgres',
+        'PORT': 5432,
 
-        # 'PASSWORD': '5978af4b301c453c0c4d056f74b83fd69681f98afa1fcd8e3828f7d693a1200e',
-        'PASSWORD': 'Secondary123.',
+        'PASSWORD': '5978af4b301c453c0c4d056f74b83fd69681f98afa1fcd8e3828f7d693a1200e',
+        # 'PASSWORD': 'Secondary123.',
 
-        # 'HOST': 'ec2-3-214-4-151.compute-1.amazonaws.com',
-        'HOST': 'localhost',
+        'HOST': 'ec2-3-214-4-151.compute-1.amazonaws.com',
+        # 'HOST': 'localhost',
 
         # 'PORT': '<db_port>',
 
