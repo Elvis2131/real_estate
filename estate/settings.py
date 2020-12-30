@@ -25,7 +25,7 @@ SECRET_KEY = 'od8u^aot8z3i=h6e!7rumya5m14qcx+&#dz(3c3xv0hiua6ehx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['morning-escarpment-70970.herokuapp.com','localhost']
 
 
 # Application definition
